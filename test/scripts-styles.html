@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scripts and Styles Example</title>
+    <meta charset="UTF-8">
+    
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="nonexistent.css">
+    
+    <!-- Internal styles -->
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .hidden-text {
+            display: none;
+        }
+        p:after {
+            content: " This content is added via CSS and should not be extracted";
+        }
+        .visible-content:before {
+            content: "CSS-generated prefix: ";
+        }
+    </style>
+    
+    <!-- External script -->
+    <script src="nonexistent.js"></script>
+    
+    <!-- Internal script -->
+    <script>
+        // This JavaScript should not be extracted
+        function showHiddenText() {
+            var hiddenElements = document.getElementsByClassName('hidden-text');
+            for (var i = 0; i < hiddenElements.length; i++) {
+                hiddenElements[i].style.display = 'block';
+            }
+            
+            // Dynamic text insertion
+            document.getElementById('dynamic-content').innerHTML = 
+                "This text is inserted by JavaScript and should not be extracted";
+            
+            // Alert with text
+            alert("This alert text should not be extracted");
+            
+            console.log("This console message should not be extracted");
+        }
+        
+        const longJavaScriptString = `
+            This is a long multiline string in JavaScript.
+            It contains text that looks like content but should not be extracted.
+            Sometimes text extraction tools might incorrectly grab this text.
+        `;
+    </script>
+    
+    <noscript>
+        Your browser does not support JavaScript. This noscript content should not be extracted.
+    </noscript>
+</head>
+<body>
+    <h1>Scripts and Styles Test Cases</h1>
+    
+    <h2>Visible Content</h2>
+    <p>This is normal visible text that should be extracted.</p>
+    <p class="visible-content">This has CSS-generated content before it.</p>
+    
+    <h2>Hidden Content via CSS</h2>
+    <div class="hidden-text">
+        This text is hidden via CSS and should not be extracted.
+        <p>This paragraph is inside a hidden div.</p>
+    </div>
+    
+    <h2>Dynamic Content</h2>
+    <div id="dynamic-content">This initial content should be extracted, not the JS-replaced version.</div>
+    
+    <h2>Inline Script</h2>
+    <p>Text before inline script <script>document.write("Dynamically written content that should not be extracted");</script> and text after.</p>
+    
+    <h2>Script with HTML Inside</h2>
+    <script type="text/javascript">
+        /*
+        <div>
+            <p>This looks like HTML but is inside a script tag and should not be extracted.</p>
+            <ul>
+                <li>Item 1 in a fake list</li>
+                <li>Item 2 in a fake list</li>
+            </ul>
+        </div>
+        */
+    </script>
+    
+    <h2>Complex Script/Style Combinations</h2>
+    <div>
+        <p>Real visible text</p>
+        <style>
+            /* CSS comments might contain text
+               that shouldn't be extracted */
+            .more-samples { color: red; }
+            .more-samples:after { content: "More CSS-generated text"; }
+        </style>
+        <p class="more-samples">More visible text.</p>
+        <script>
+            // More script that shouldn't be extracted
+            var lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+            document.querySelector('.more-samples').setAttribute('data-info', 'Hidden attribute text');
+        </script>
+    </div>
+    
+    <h2>Template Tags</h2>
+    <template id="template-content">
+        <div>
+            <p>This text is inside a template tag and might not be visible by default.</p>
+            <ul>
+                <li>Template item 1</li>
+                <li>Template item 2</li>
+            </ul>
+        </div>
+    </template>
+    
+    <h2>Code Samples</h2>
+    <pre><code>
+    // This is a code example
+    function example() {
+        const text = "Sample text in code";
+        return text.toUpperCase();
+    }
+    </code></pre>
+    
+    <h2>CDATA Section</h2>
+    <div>
+        <![CDATA[
+        This is CDATA content that shouldn't be parsed as HTML.
+        It might contain <tags> that look like HTML but aren't.
+        ]]>
+    </div>
+    
+    <h2>Final Normal Content</h2>
+    <p>This is the final paragraph with normal content that should be extracted.</p>
+    
+    <!-- Script at end of body -->
+    <script>
+        window.onload = function() {
+            showHiddenText();
+        }
+    </script>
+</body>
+</html> 

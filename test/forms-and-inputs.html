@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forms and Inputs Example</title>
+    <style>
+        .hidden-form {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Forms and Inputs Test Cases</h1>
+    
+    <h2>Basic Form</h2>
+    <form action="#" method="post">
+        <div>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+        </div>
+        
+        <div>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com">
+        </div>
+        
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Your password" value="secret123">
+        </div>
+        
+        <div>
+            <input type="submit" value="Submit Form">
+            <input type="reset" value="Reset Form">
+        </div>
+    </form>
+    
+    <h2>Form with Different Input Types</h2>
+    <form action="#" method="get">
+        <div>
+            <label for="number">Number Input:</label>
+            <input type="number" id="number" name="number" min="1" max="100" value="42">
+        </div>
+        
+        <div>
+            <label for="date">Date Input:</label>
+            <input type="date" id="date" name="date" value="2023-06-15">
+        </div>
+        
+        <div>
+            <label for="range">Range Slider:</label>
+            <input type="range" id="range" name="range" min="0" max="100" value="75">
+        </div>
+        
+        <div>
+            <label for="color">Color Picker:</label>
+            <input type="color" id="color" name="color" value="#3366cc">
+        </div>
+        
+        <div>
+            <label for="file">File Upload:</label>
+            <input type="file" id="file" name="file">
+        </div>
+    </form>
+    
+    <h2>Form with Selections</h2>
+    <form action="#" method="post">
+        <div>
+            <label for="dropdown">Dropdown Selection:</label>
+            <select id="dropdown" name="dropdown">
+                <option value="">Please select an option</option>
+                <option value="option1" selected>Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+                <optgroup label="Advanced Options">
+                    <option value="advanced1">Advanced Option 1</option>
+                    <option value="advanced2">Advanced Option 2</option>
+                </optgroup>
+            </select>
+        </div>
+        
+        <fieldset>
+            <legend>Radio Button Group:</legend>
+            
+            <div>
+                <input type="radio" id="radio1" name="radio_group" value="radio1" checked>
+                <label for="radio1">Radio Option 1</label>
+            </div>
+            
+            <div>
+                <input type="radio" id="radio2" name="radio_group" value="radio2">
+                <label for="radio2">Radio Option 2</label>
+            </div>
+            
+            <div>
+                <input type="radio" id="radio3" name="radio_group" value="radio3">
+                <label for="radio3">Radio Option 3</label>
+            </div>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Checkbox Group:</legend>
+            
+            <div>
+                <input type="checkbox" id="check1" name="check1" value="check1" checked>
+                <label for="check1">Checkbox Option 1</label>
+            </div>
+            
+            <div>
+                <input type="checkbox" id="check2" name="check2" value="check2">
+                <label for="check2">Checkbox Option 2</label>
+            </div>
+            
+            <div>
+                <input type="checkbox" id="check3" name="check3" value="check3" checked>
+                <label for="check3">Checkbox Option 3</label>
+            </div>
+        </fieldset>
+    </form>
+    
+    <h2>Textareas and Rich Content</h2>
+    <form action="#" method="post">
+        <div>
+            <label for="textarea">Multi-line Text Input:</label>
+            <textarea id="textarea" name="textarea" rows="4" cols="50" placeholder="Enter your multi-line text here">This is some pre-filled text in the textarea that should be extracted.</textarea>
+        </div>
+        
+        <div>
+            <label for="contenteditable">Rich Text Editor (contenteditable):</label>
+            <div id="contenteditable" contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-height: 100px;">
+                <p>This is <strong>editable</strong> content that <em>should be extracted</em>.</p>
+                <ul>
+                    <li>Bullet point 1</li>
+                    <li>Bullet point 2</li>
+                </ul>
+            </div>
+        </div>
+    </form>
+    
+    <h2>Hidden Form Elements</h2>
+    <form action="#" method="post">
+        <input type="hidden" name="hidden_field" value="This is a hidden input value that shouldn't be visible">
+        
+        <div class="hidden-form">
+            <label for="hidden_visible">This form section is hidden with CSS:</label>
+            <input type="text" id="hidden_visible" name="hidden_visible" value="Hidden form value">
+        </div>
+        
+        <div>
+            <label for="visible_with_hidden">Visible Input with Hidden Attribute:</label>
+            <input type="text" id="visible_with_hidden" name="visible_with_hidden" value="Visible input value" hidden>
+        </div>
+        
+        <div>
+            <label for="disabled_input">Disabled Input:</label>
+            <input type="text" id="disabled_input" name="disabled_input" value="Disabled input value" disabled>
+        </div>
+        
+        <div>
+            <label for="readonly_input">Read-only Input:</label>
+            <input type="text" id="readonly_input" name="readonly_input" value="Read-only input value" readonly>
+        </div>
+    </form>
+    
+    <h2>Form with ARIA Attributes</h2>
+    <form action="#" method="post" aria-label="Contact Information Form">
+        <div>
+            <label id="name_label">Name with ARIA:</label>
+            <input type="text" aria-labelledby="name_label" aria-required="true" aria-describedby="name_desc">
+            <div id="name_desc" class="hidden-form">Please enter your full legal name.</div>
+        </div>
+        
+        <div>
+            <input type="text" aria-label="Email Address" placeholder="Email with aria-label">
+        </div>
+        
+        <div>
+            <span id="phone_label">Phone Number:</span>
+            <input type="tel" aria-labelledby="phone_label" aria-description="Please include country code">
+        </div>
+    </form>
+    
+    <h2>Datalist Example</h2>
+    <form>
+        <label for="browser">Choose your browser from the list:</label>
+        <input list="browsers" name="browser" id="browser">
+        <datalist id="browsers">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Safari">
+            <option value="Edge">
+            <option value="Opera">
+        </datalist>
+    </form>
+    
+    <h2>Input with Autocomplete</h2>
+    <form>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" autocomplete="country">
+        
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" autocomplete="street-address">
+    </form>
+    
+    <p>Normal text after all form examples.</p>
+</body>
+</html> 

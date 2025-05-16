@@ -1,0 +1,41 @@
+{
+  "name": "html-text-extractor",
+  "version": "1.0.0",
+  "description": "A utility for extracting readable text content from HTML strings.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "html-text-extractor": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc && cp src/references.json dist/",
+    "prepare": "npm run build",
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "html",
+    "text",
+    "extraction",
+    "parser",
+    "content",
+    "scraping"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/html-text-extractor.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.19.100",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

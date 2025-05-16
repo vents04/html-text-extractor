@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Malformed HTML Example</title>
+</head>
+<body>
+    <h1>Malformed HTML Test Cases</h1>
+
+    <!-- Unclosed tags -->
+    <div>This div has no closing tag
+    <p>This paragraph is inside the unclosed div
+    <span>This span is inside the unclosed paragraph
+
+    <!-- Improperly nested tags -->
+    <div><p>This paragraph starts in a div <div>This is a nested div</p></div>
+
+    <!-- Self-closing tags without proper XML notation -->
+    <br>
+    <img src="missing.jpg" alt="This image tag is not properly closed">
+    <hr>
+
+    <!-- Unclosed attributes -->
+    <div class="test style="color:red;">Unclosed attribute quotes</div>
+
+    <!-- Mismatched closing tags -->
+    <div>This is a div that will be closed with the wrong tag</span>
+
+    <!-- HTML with multiple root elements -->
+    </body>
+    </html>
+    <html>
+    <body>
+        <p>This is outside the main HTML structure</p>
+    
+    <!-- Missing DOCTYPE and HTML structure -->
+    <p>This paragraph has no proper HTML structure around it
+
+    <!-- Extra closing tags -->
+    <p>This is a normal paragraph</p></p></p>
+
+    <!-- Tag with duplicate attributes -->
+    <a href="#" href="duplicate.html" title="duplicate" title="attributes">Duplicate attributes</a>
+
+    <!-- Unclosed comments -->
+    <!-- This comment has no closing tag
+
+    <div>This div is inside an unclosed comment
+
+    <!-- Empty tags that should be self-closing -->
+    <div></div>
+    <p></p>
+
+    <div>Final properly formatted content for extraction testing!</div>
+</body>
+</html> 

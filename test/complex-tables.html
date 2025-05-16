@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complex Tables Example</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+        .hide-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Complex Tables Test Cases</h1>
+    
+    <h2>Basic Table</h2>
+    <table>
+        <caption>Simple Data Table Example</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Smith</td>
+                <td>34</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Jane Doe</td>
+                <td>28</td>
+                <td>Los Angeles</td>
+            </tr>
+            <tr>
+                <td>Bob Johnson</td>
+                <td>42</td>
+                <td>Chicago</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Table footer text should be extracted</td>
+            </tr>
+        </tfoot>
+    </table>
+    
+    <h2>Table with Rowspan and Colspan</h2>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Product</th>
+                <th colspan="2">Sales</th>
+                <th rowspan="2">Total</th>
+            </tr>
+            <tr>
+                <th>Q1</th>
+                <th>Q2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Product A</td>
+                <td>$10,000</td>
+                <td>$12,000</td>
+                <td>$22,000</td>
+            </tr>
+            <tr>
+                <td>Product B</td>
+                <td>$8,500</td>
+                <td>$9,200</td>
+                <td>$17,700</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Product C</td>
+                <td>$7,300</td>
+                <td rowspan="2">$15,400</td>
+                <td rowspan="2">$22,700</td>
+            </tr>
+            <tr>
+                <td>$7,300</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>Nested Tables</h2>
+    <table>
+        <tr>
+            <td>Cell 1</td>
+            <td>
+                <table>
+                    <tr>
+                        <td>Nested Table - Row 1, Cell 1</td>
+                        <td>Nested Table - Row 1, Cell 2</td>
+                    </tr>
+                    <tr>
+                        <td>Nested Table - Row 2, Cell 1</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>Double Nested Table Cell</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>Cell 3</td>
+        </tr>
+    </table>
+    
+    <h2>Table with Hidden Content</h2>
+    <table>
+        <tr>
+            <th>Visible Header 1</th>
+            <th>Visible Header 2</th>
+            <th class="hide-content">Hidden Header</th>
+        </tr>
+        <tr>
+            <td>Visible Cell 1</td>
+            <td>Visible Cell 2</td>
+            <td style="display: none;">Hidden Cell Content</td>
+        </tr>
+        <tr>
+            <td>Another Visible Cell</td>
+            <td style="visibility: hidden;">Invisible Cell</td>
+            <td>Final Visible Cell</td>
+        </tr>
+    </table>
+    
+    <h2>Table with Mixed Content</h2>
+    <table>
+        <tr>
+            <td>
+                <h3>Heading in table cell</h3>
+                <p>Paragraph in table cell</p>
+                <ul>
+                    <li>List item in table</li>
+                    <li>Another list item</li>
+                </ul>
+            </td>
+            <td>
+                <img src="nonexistent.jpg" alt="Image in table cell">
+                <a href="#">Link in table cell</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>Code block in table cell</code>
+                <pre>Preformatted text in table</pre>
+            </td>
+            <td>
+                <blockquote>Blockquote in table cell</blockquote>
+                <script>
+                    // Script in table cell should be ignored
+                    document.write("This should not appear");
+                </script>
+            </td>
+        </tr>
+    </table>
+    
+    <h2>Complex Header Structure</h2>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="3">Category</th>
+                <th colspan="9">Products</th>
+            </tr>
+            <tr>
+                <th colspan="3">Type A</th>
+                <th colspan="3">Type B</th>
+                <th colspan="3">Type C</th>
+            </tr>
+            <tr>
+                <th>Basic</th>
+                <th>Standard</th>
+                <th>Premium</th>
+                <th>Basic</th>
+                <th>Standard</th>
+                <th>Premium</th>
+                <th>Basic</th>
+                <th>Standard</th>
+                <th>Premium</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Electronics</td>
+                <td>10</td>
+                <td>20</td>
+                <td>30</td>
+                <td>5</td>
+                <td>15</td>
+                <td>25</td>
+                <td>8</td>
+                <td>18</td>
+                <td>28</td>
+            </tr>
+            <tr>
+                <td>Furniture</td>
+                <td>12</td>
+                <td>22</td>
+                <td>32</td>
+                <td>7</td>
+                <td>17</td>
+                <td>27</td>
+                <td>9</td>
+                <td>19</td>
+                <td>29</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>Empty and Sparse Tables</h2>
+    <table>
+        <tr>
+            <td></td>
+            <td>Header 1</td>
+            <td>Header 2</td>
+        </tr>
+        <tr>
+            <td>Row 1</td>
+            <td></td>
+            <td>Data</td>
+        </tr>
+        <tr>
+            <td>Row 2</td>
+            <td>Data</td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <!-- Completely empty table -->
+    <table>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+    </table>
+    
+    <p>Normal text after all table examples.</p>
+</body>
+</html> 

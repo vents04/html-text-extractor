@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Entities Example</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>HTML Entities Test Cases</h1>
+    
+    <h2>Basic HTML Entities</h2>
+    <div>
+        <p>&lt;div&gt; tags should appear as text, not as HTML elements.</p>
+        <p>The ampersand symbol: &amp; should be extracted correctly.</p>
+        <p>Double quotes: &quot;quoted text&quot; should be normal quotes.</p>
+        <p>Non-breaking space: text&nbsp;with&nbsp;spaces should maintain spacing.</p>
+    </div>
+    
+    <h2>Special Characters</h2>
+    <ul>
+        <li>Copyright: &copy; should be ©</li>
+        <li>Registered trademark: &reg; should be ®</li>
+        <li>Trademark: &trade; should be ™</li>
+        <li>Euro: &euro; should be €</li>
+        <li>Pound: &pound; should be £</li>
+        <li>Yen: &yen; should be ¥</li>
+        <li>Cent: &cent; should be ¢</li>
+        <li>Degree: &deg; should be °</li>
+        <li>Micro: &micro; should be µ</li>
+    </ul>
+    
+    <h2>Mathematical Symbols</h2>
+    <ul>
+        <li>Plus/minus: &plusmn; should be ±</li>
+        <li>Multiplication: &times; should be ×</li>
+        <li>Division: &divide; should be ÷</li>
+        <li>Fraction one quarter: &frac14; should be ¼</li>
+        <li>Fraction one half: &frac12; should be ½</li>
+        <li>Fraction three quarters: &frac34; should be ¾</li>
+        <li>Sum: &sum; should be ∑</li>
+        <li>Infinity: &infin; should be ∞</li>
+    </ul>
+    
+    <h2>Typographic Symbols</h2>
+    <ul>
+        <li>En dash: &ndash; should be –</li>
+        <li>Em dash: &mdash; should be —</li>
+        <li>Left single quote: &lsquo; should be '</li>
+        <li>Right single quote: &rsquo; should be '</li>
+        <li>Left double quote: &ldquo; should be "</li>
+        <li>Right double quote: &rdquo; should be "</li>
+        <li>Bullet: &bull; should be •</li>
+        <li>Ellipsis: &hellip; should be …</li>
+    </ul>
+    
+    <h2>Greek Letters</h2>
+    <ul>
+        <li>Alpha: &alpha; should be α</li>
+        <li>Beta: &beta; should be β</li>
+        <li>Gamma: &gamma; should be γ</li>
+        <li>Delta: &Delta; should be Δ</li>
+        <li>Omega: &Omega; should be Ω</li>
+        <li>Pi: &pi; should be π</li>
+    </ul>
+    
+    <h2>Numeric HTML Entities</h2>
+    <ul>
+        <li>Decimal numeric: &#169; should be ©</li>
+        <li>Hexadecimal numeric: &#xA9; should be ©</li>
+        <li>High Unicode character: &#x1F600; should be 😀</li>
+        <li>Very high code point: &#x1F6A3; should be 🚣</li>
+    </ul>
+    
+    <h2>Unusual/Rare Entities</h2>
+    <ul>
+        <li>Zero-width space: text&#8203;with&#8203;hidden&#8203;breaks should be extracted properly</li>
+        <li>Em space: before&#8195;after should have a long space</li>
+        <li>Thin space: before&#8201;after should have a thin space</li>
+        <li>Hair space: before&#8202;after should have a very thin space</li>
+        <li>Left-to-right mark: &#8206;مرحبا (should affect text direction)</li>
+        <li>Right-to-left mark: hello&#8207;world (should affect text direction)</li>
+    </ul>
+    
+    <h2>Long Text with Multiple Entities</h2>
+    <p>
+        This paragraph contains multiple HTML entities &amp; special characters.
+        It includes quotes (&ldquo;like this&rdquo;) and symbols (&copy; &reg; &euro;).
+        There are also numeric entities like &#169; and &#x2122;. This should all be 
+        converted to normal text for extraction. Let&apos;s include some math: 
+        2&times;2&equals;4 and 1&divide;2&equals;0.5. 
+    </p>
+    
+    <h2>Invalid or Broken Entities</h2>
+    <ul>
+        <li>Broken entity: &broken; should remain as is</li>
+        <li>Incomplete entity: &amp should remain as is</li>
+        <li>Double entities: &amp;amp; should be extracted as a single &amp;</li>
+        <li>Nonexistent numeric: &#999999; should remain or be safely handled</li>
+    </ul>
+</body>
+</html> 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multimedia Content Example</title>
+</head>
+<body>
+    <h1>Multimedia Content Test Cases</h1>
+    
+    <h2>Images with Alt Text</h2>
+    <div>
+        <img src="nonexistent.jpg" alt="This is an image description that should be extracted">
+        <img src="missing.png" alt="Another important image description">
+        <img src="sample.gif" alt="Animated GIF showing a process">
+    </div>
+    
+    <h2>Images without Alt Text</h2>
+    <div>
+        <img src="logo.png">
+        <img src="banner.jpg" alt="">
+        <img src="icon.svg" title="Image with title but no alt">
+    </div>
+    
+    <h2>Figure Elements with Captions</h2>
+    <figure>
+        <img src="chart.png" alt="Data visualization chart">
+        <figcaption>Figure 1: Annual sales data visualization showing growth trends</figcaption>
+    </figure>
+    
+    <figure>
+        <img src="diagram.svg" alt="Process diagram">
+        <figcaption>Figure 2: Manufacturing process flow diagram</figcaption>
+    </figure>
+    
+    <h2>Iframes with Titles</h2>
+    <div>
+        <iframe src="embedded.html" title="Embedded content from another page"></iframe>
+        <iframe src="https://example.com/embed" title="External embedded content"></iframe>
+    </div>
+    
+    <h2>Embedded Media Players</h2>
+    <div>
+        <video controls width="400" poster="video-placeholder.jpg">
+            <source src="video.mp4" type="video/mp4">
+            <track kind="subtitles" src="captions.vtt" srclang="en" label="English">
+            Your browser does not support the video tag.
+        </video>
+        
+        <audio controls>
+            <source src="audio.mp3" type="audio/mpeg">
+            <source src="audio.ogg" type="audio/ogg">
+            <track kind="subtitles" src="audio-transcript.vtt" srclang="en" label="English">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <h2>SVG with Text Elements</h2>
+    <svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
+        <text x="10" y="30" fill="blue">This is SVG text that should be extracted</text>
+        <text x="10" y="60" fill="red">This is more SVG text content</text>
+        <text x="10" y="90">
+            <tspan x="10" y="90">SVG text with tspan element</tspan>
+        </text>
+    </svg>
+    
+    <h2>Canvas Elements with Fallback</h2>
+    <canvas id="myCanvas" width="300" height="100">
+        Your browser does not support canvas.
+        This fallback text should be extracted.
+    </canvas>
+    
+    <h2>Complex Media with Descriptions</h2>
+    <div>
+        <img src="complex-diagram.png" alt="Complex system architecture" aria-describedby="diagram-desc">
+        <div id="diagram-desc">
+            This diagram shows the interaction between various system components including
+            the database layer, application servers, and client interfaces. Arrows indicate
+            data flow direction and communication protocols.
+        </div>
+    </div>
+    
+    <h2>Embedded Maps</h2>
+    <div>
+        <iframe 
+            src="https://maps.example.com/embed"
+            width="600"
+            height="450"
+            title="Interactive map showing office locations across Europe"
+            allowfullscreen
+            loading="lazy">
+        </iframe>
+        <p>The map above shows our office locations across Europe.</p>
+    </div>
+    
+    <h2>Math Formulas (MathML)</h2>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <mi>E</mi>
+            <mo>=</mo>
+            <mi>m</mi>
+            <msup>
+                <mi>c</mi>
+                <mn>2</mn>
+            </msup>
+        </mrow>
+    </math>
+    <p>The formula above represents Einstein's famous equation.</p>
+    
+    <h2>Normal Text After Multimedia</h2>
+    <p>This is normal text after all the multimedia content examples.</p>
+</body>
+</html> 

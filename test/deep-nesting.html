@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deeply Nested HTML Example</title>
+</head>
+<body>
+    <h1>Deeply Nested HTML Test Cases</h1>
+    
+    <!-- Deeply nested divs -->
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <div>
+                                                        <div>Level 10 deep nesting</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Deeply nested lists -->
+    <ul>
+        <li>Level 1
+            <ul>
+                <li>Level 2
+                    <ul>
+                        <li>Level 3
+                            <ul>
+                                <li>Level 4
+                                    <ul>
+                                        <li>Level 5
+                                            <ul>
+                                                <li>Level 6
+                                                    <ul>
+                                                        <li>Level 7 deep nested list item
+                                                            <ul>
+                                                                <li>Level 8 content should be extracted</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+    <!-- Deeply nested tables -->
+    <table border="1">
+        <tr>
+            <td>Level 1
+                <table border="1">
+                    <tr>
+                        <td>Level 2
+                            <table border="1">
+                                <tr>
+                                    <td>Level 3
+                                        <table border="1">
+                                            <tr>
+                                                <td>Level 4 deeply nested table cell</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+    <!-- Recursive same-tag nesting (edge case for regex-based parsers) -->
+    <div>
+        div1
+        <div>
+            div2
+            <div>
+                div3
+                <div>
+                    div4
+                    <div>
+                        div5
+                        <div>
+                            div6 content should be extracted
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Deeply nested blockquotes -->
+    <blockquote>
+        Outer quote
+        <blockquote>
+            Nested quote
+            <blockquote>
+                Third level quote
+                <blockquote>
+                    Fourth level quote text should be extracted
+                </blockquote>
+            </blockquote>
+        </blockquote>
+    </blockquote>
+    
+    <!-- Extremely deep nesting that might cause stack overflow -->
+    <div id="level1"><div id="level2"><div id="level3"><div id="level4"><div id="level5"><div id="level6"><div id="level7"><div id="level8"><div id="level9"><div id="level10"><div id="level11"><div id="level12"><div id="level13"><div id="level14"><div id="level15"><div id="level16"><div id="level17"><div id="level18"><div id="level19"><div id="level20"><div id="level21"><div id="level22"><div id="level23"><div id="level24"><div id="level25"><div id="level26"><div id="level27"><div id="level28"><div id="level29"><div id="level30"><div id="level31"><div id="level32"><div id="level33"><div id="level34"><div id="level35"><div id="level36"><div id="level37"><div id="level38"><div id="level39"><div id="level40"><div id="level41"><div id="level42"><div id="level43"><div id="level44"><div id="level45"><div id="level46"><div id="level47"><div id="level48"><div id="level49"><div id="level50">This text is nested 50 levels deep!</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+    <p>This is a normal paragraph after all the deep nesting.</p>
+</body>
+</html> 

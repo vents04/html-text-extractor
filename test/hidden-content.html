@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hidden Content Example</title>
+    <style>
+        .hidden-display { display: none; }
+        .hidden-visibility { visibility: hidden; }
+        .hidden-opacity { opacity: 0; }
+        .hidden-size { height: 0; width: 0; overflow: hidden; }
+        .hidden-clip { clip: rect(1px, 1px, 1px, 1px); position: absolute; }
+        .hidden-transform { transform: scale(0); }
+        .hidden-position { position: absolute; left: -9999px; }
+    </style>
+</head>
+<body>
+    <h1>Hidden Content Test Cases</h1>
+    
+    <div>This text is visible and should be extracted.</div>
+    
+    <!-- Hidden with display:none -->
+    <div class="hidden-display">This text should NOT be extracted (display: none).</div>
+    
+    <!-- Hidden with display:none inline style -->
+    <div style="display: none;">This text should NOT be extracted (inline display: none).</div>
+    
+    <!-- Hidden with visibility:hidden -->
+    <div class="hidden-visibility">This text should NOT be extracted (visibility: hidden).</div>
+    
+    <!-- Hidden with opacity:0 -->
+    <div class="hidden-opacity">This text should NOT be extracted (opacity: 0).</div>
+    
+    <!-- Hidden with zero dimensions -->
+    <div class="hidden-size">This text should NOT be extracted (zero dimensions).</div>
+    
+    <!-- Hidden with clip rect -->
+    <div class="hidden-clip">This text should NOT be extracted (clip rect).</div>
+    
+    <!-- Hidden with transform scale -->
+    <div class="hidden-transform">This text should NOT be extracted (transform scale).</div>
+    
+    <!-- Hidden with position off-screen -->
+    <div class="hidden-position">This text should NOT be extracted (positioned off-screen).</div>
+    
+    <!-- Hidden with aria-hidden attribute -->
+    <div aria-hidden="true">This text should NOT be extracted (aria-hidden).</div>
+    
+    <!-- Hidden with hidden attribute -->
+    <div hidden>This text should NOT be extracted (hidden attribute).</div>
+    
+    <!-- Visible content with hidden children -->
+    <div>
+        This text is visible and should be extracted.
+        <span style="display: none;">But this nested span should NOT be extracted.</span>
+    </div>
+    
+    <!-- Complicated nested visibility -->
+    <div style="display: none;">
+        <p>This paragraph is in a hidden div.</p>
+        <div style="display: block !important;">
+            This inner div tries to override its parent's display with !important,
+            but should still be hidden.
+        </div>
+    </div>
+    
+    <p>This final paragraph should appear in the extracted content.</p>
+</body>
+</html> 

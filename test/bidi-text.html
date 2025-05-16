@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bidirectional Text Example</title>
+    <meta charset="UTF-8">
+    <style>
+        .rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        .ltr {
+            direction: ltr;
+            text-align: left;
+        }
+        .mixed {
+            unicode-bidi: embed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bidirectional Text Test Cases</h1>
+    
+    <h2>Left-to-Right (LTR) Text</h2>
+    <div class="ltr">
+        <p>This is standard English text that goes from left to right.</p>
+        <p lang="en">This paragraph has an explicit language attribute set to English.</p>
+        <p>Text with numbers: 123456789</p>
+    </div>
+    
+    <h2>Right-to-Left (RTL) Text</h2>
+    <div class="rtl">
+        <p lang="ar">هذا نص باللغة العربية يُقرأ من اليمين إلى اليسار.</p>
+        <p lang="he">זהו טקסט בעברית הנקרא מימין לשמאל.</p>
+        <p dir="rtl">This is English text but with RTL direction applied.</p>
+    </div>
+    
+    <h2>Mixed Bidirectional Text</h2>
+    <p class="mixed">
+        This is English text <span lang="ar">مع بعض النص العربي</span> mixed in between.
+    </p>
+    
+    <p class="mixed">
+        <span lang="ar">هذا نص عربي مع </span>English text<span lang="ar"> في المنتصف ثم يعود للعربية.</span>
+    </p>
+    
+    <p class="mixed">
+        Phone number: +1 (555) 123-4567 is displayed the same in <span lang="ar">النص العربي +1 (555) 123-4567</span>
+    </p>
+    
+    <h2>Bidirectional Text with Formatting</h2>
+    <div class="rtl">
+        <p lang="ar">
+            <strong>نص عربي غامق</strong> مع <em>كلمات مائلة</em> و<u>كلمات تحتها خط</u>.
+        </p>
+    </div>
+    
+    <h2>Bidirectional Text with Isolation</h2>
+    <p>
+        Regular LTR text with 
+        <span dir="rtl" style="unicode-bidi: isolate;">معزول RTL نص</span>
+        continues with LTR text.
+    </p>
+    
+    <p dir="rtl">
+        نص عادي RTL مع 
+        <span dir="ltr" style="unicode-bidi: isolate;">isolated LTR text</span>
+        يستمر النص باتجاه RTL.
+    </p>
+    
+    <h2>Bidirectional Override</h2>
+    <p>
+        LTR text with 
+        <bdo dir="rtl">this text will display right-to-left</bdo>
+        and then back to normal.
+    </p>
+    
+    <h2>Character-Level Direction Control</h2>
+    <p>
+        Text with left-to-right mark (LRM): a&#8206;b
+        and right-to-left mark (RLM): a&#8207;b
+    </p>
+    
+    <h2>Numeric Formatting in RTL Context</h2>
+    <div class="rtl" lang="ar">
+        <p>أسعار المنتجات: $19.99، $24.50، $99.99</p>
+        <p>التاريخ: 2023/05/15</p>
+        <p>الوقت: 14:30:45</p>
+    </div>
+    
+    <h2>Different Languages</h2>
+    <ul>
+        <li lang="fr">Français: Ceci est un texte en français.</li>
+        <li lang="de">Deutsch: Dies ist ein Text auf Deutsch.</li>
+        <li lang="ja">日本語: これは日本語のテキストです。</li>
+        <li lang="zh">中文: 这是中文文本。</li>
+        <li lang="ru">Русский: Это текст на русском языке.</li>
+        <li lang="th">ไทย: นี่คือข้อความภาษาไทย</li>
+    </ul>
+    
+    <h2>Complex Bidirectional Layout</h2>
+    <div>
+        <p>Starting with English, 
+            <span lang="ar" dir="rtl">ثم الانتقال إلى العربية 
+                <span lang="en" dir="ltr">then nested English 
+                    <span lang="ar" dir="rtl">ثم العربية مرة أخرى</span>
+                </span>
+                <span lang="he" dir="rtl">ואז קצת עברית</span>
+            </span>
+            and back to English.
+        </p>
+    </div>
+    
+    <h2>Text with Bidirectional Control Characters</h2>
+    <p>English, then Arabic (with RLM): English &#8207;العربية</p>
+    <p>Arabic, then English (with LRM): العربية&#8206; English</p>
+    
+    <h2>Bidirectional Table</h2>
+    <table border="1">
+        <tr>
+            <th>English Header</th>
+            <th lang="ar">عنوان عربي</th>
+        </tr>
+        <tr>
+            <td>English content</td>
+            <td lang="ar">محتوى عربي</td>
+        </tr>
+        <tr>
+            <td lang="ar">خلية باللغة العربية</td>
+            <td>English cell</td>
+        </tr>
+    </table>
+    
+    <p>Final paragraph after all bidirectional text examples.</p>
+</body>
+</html> 
