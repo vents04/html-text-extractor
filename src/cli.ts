@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import fs from 'fs';
-import path from 'path';
 import { extractTextFromHtml } from './index';
 
 const args = process.argv.slice(2);
