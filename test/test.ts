@@ -20,7 +20,7 @@ const samples = [
   {
     name: 'HTML with images',
     html: '<div>Text with <img src="img.jpg" alt="an image"> inline</div>',
-    expected: 'Text with [Image: an image] inline'
+    expected: 'Text with inline'
   },
   {
     name: 'HTML with scripts and styles',

@@ -143,14 +143,6 @@ function extractVisibleText(html: string): string {
   
   const preserveTagsPattern = new RegExp(`<(${preserveTags.join('|')})(?:\\s[^>]*)?>(.*?)<\\/\\1>`, 'gi');
   
-  html = html.replace(/<img\s+[^>]*alt\s*=\s*["']([^"']*)["'][^>]*>/gi, (match, alt) => {
-    return alt ? `[Image: ${alt}] ` : '';
-  });
-  
-  html = html.replace(/<iframe\s+[^>]*title\s*=\s*["']([^"']*)["'][^>]*>/gi, (match, title) => {
-    return title ? `[Iframe: ${title}] ` : '';
-  });
-  
   function extractFromTag(content: string, depth = 0): string {
     if (depth > 500) {
       return content.replace(/<[^>]*>/g, '');
