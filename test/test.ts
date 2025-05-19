@@ -1,4 +1,4 @@
-const { extractTextFromHtml } = require('../dist');
+import { extractTextFromHtml } from '../dist/index.js';
 
 // Sample HTML strings for testing
 const samples = [

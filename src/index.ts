@@ -7,6 +7,8 @@ const namedReferences = JSON.parse(fs.readFileSync(path.join(__dirname, './refer
 const selfClosingTags = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 
   'link', 'meta', 'param', 'source', 'track', 'wbr'];
 
+const selfClosingTagsObsolete = ['command', 'keygen', 'menuitem', 'frame'];
+
 /**
  * Extracts readable text content from an HTML string
  * @param htmlString - The HTML string to extract text from. Can be a regular HTML string or a base64 encoded HTML string
@@ -63,7 +65,7 @@ function preprocessHtml(html: string): string {
   html = html.replace(/<\/?([a-z][a-z0-9]*)[^>]*>/gi, (match, tagName) => {
     const tagLower = tagName.toLowerCase();
     
-    if (match.endsWith('/>') || selfClosingTags.includes(tagLower)) {
+    if (match.endsWith('/>') || selfClosingTags.includes(tagLower) || selfClosingTagsObsolete.includes(tagLower)) {
       return match;
     }
     
